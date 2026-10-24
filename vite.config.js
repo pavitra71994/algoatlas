@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: 'https://github.com/pavitra71994/algoatlas.git'
+  base: process.env.GITHUB_ACTIONS ? '/algoatlas/' : '/',
 });

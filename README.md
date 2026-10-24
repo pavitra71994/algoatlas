@@ -15,6 +15,10 @@ Create a production build with:
 npm run build
 ```
 
+## Deploy to GitHub Pages
+
+The `Deploy to GitHub Pages` workflow builds and deploys the site when changes are pushed to `main`, or when run manually from the Actions tab. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The production build uses `/algoatlas/` as its base path; local development continues to use `/`.
+
 ## Content
 
 The catalog contains all 150 problems with collection ID, title, topic, difficulty, signal, and a LeetCode link. Search, difficulty filtering, topic filtering, and difficulty sorting operate over the complete catalog, which is shown 15 problems per page.
