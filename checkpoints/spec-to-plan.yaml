@@ -1,0 +1,125 @@
+metadata:
+  generated: "2026-10-25"
+  source_spec: "User request in this session"
+  target_plan: "plan.md"
+
+summary:
+  total_requirements: 7
+  covered_requirements: 7
+  missing_requirements: 0
+  coverage_percentage: 100.0
+
+requirements:
+  - req_id: "REQ-001"
+    req_description: "Include a complete catalog of the 150 Top Interview problems with metadata"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2 and Phase-3"
+      phase_name: "Foundational content and catalog browsing"
+      items:
+        - item_id: "2.1"
+          description: "Build and validate the 150-problem catalog"
+        - item_id: "3.1"
+          description: "Search, filter, and sort the collection"
+        - item_id: "5.2"
+          description: "Verify acceptance criteria and document content provenance"
+    notes: "Source README reports 74/150 progress; verify actual source coverage."
+  - req_id: "REQ-002"
+    req_description: "Search problems by title, filter/sort by difficulty, and open problem details"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1 and Phase-3"
+      phase_name: "Setup and browse and understand the problem set"
+      items:
+        - item_id: "1.2"
+          description: "Establish the application shell and navigation"
+        - item_id: "3.1"
+          description: "Search, filter, and sort the collection"
+        - item_id: "3.2"
+          description: "Read a problem's algorithm and select a solution language"
+    notes: ""
+  - req_id: "REQ-003"
+    req_description: "Show an algorithm explanation and complexity for each problem"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2 and Phase-3"
+      phase_name: "Foundational content and browse and understand the problem set"
+      items:
+        - item_id: "2.2"
+          description: "Add explanations and original Python and Java reference solutions"
+        - item_id: "3.2"
+          description: "Read a problem's algorithm and select a solution language"
+        - item_id: "5.2"
+          description: "Verify acceptance criteria and document content provenance"
+    notes: "Verify licensing before reusing source code; author original content where needed."
+  - req_id: "REQ-004"
+    req_description: "Visually step through a curated subset of algorithms"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-4"
+      phase_name: "Explore selected algorithms visually"
+      items:
+        - item_id: "4.1"
+          description: "Define deterministic algorithm traces and visualization rendering"
+        - item_id: "4.2"
+          description: "Add playback controls and curated visualizations"
+    notes: ""
+  - req_id: "REQ-005"
+    req_description: "Provide a responsive and accessible React JavaScript experience"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1, Phase-3, Phase-4, and Phase-5"
+      phase_name: "Setup, catalog, visualization, and polish"
+      items:
+        - item_id: "1.1"
+          description: "Initialize the React JavaScript application"
+        - item_id: "1.2"
+          description: "Establish the application shell and navigation"
+        - item_id: "3.1"
+          description: "Search, filter, and sort the collection"
+        - item_id: "4.2"
+          description: "Add playback controls and curated visualizations"
+        - item_id: "5.1"
+          description: "Ensure accessible, responsive playback and catalog UI"
+    notes: ""
+  - req_id: "REQ-006"
+    req_description: "Attribute source material and respect source coverage/licensing"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2, Phase-3, and Phase-5"
+      phase_name: "Foundational content, problem detail, and validation"
+      items:
+        - item_id: "2.1"
+          description: "Build and validate the 150-problem catalog"
+        - item_id: "2.2"
+          description: "Add explanations and original Python and Java reference solutions"
+        - item_id: "3.2"
+          description: "Read a problem's algorithm and select a solution language"
+        - item_id: "5.2"
+          description: "Verify acceptance criteria and document content provenance"
+    notes: ""
+  - req_id: "REQ-007"
+    req_description: "Let users select Python or Java and show the matching reference solution"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2, Phase-3, and Phase-5"
+      phase_name: "Solution content, problem details, and validation"
+      items:
+        - item_id: "2.2"
+          description: "Add explanations and original Python and Java reference solutions"
+        - item_id: "3.2"
+          description: "Read a problem's algorithm and select a solution language"
+        - item_id: "5.2"
+          description: "Verify acceptance criteria and document content provenance"
+    notes: "Both languages are required for every problem; the selector controls which one is displayed."
+
+missing_requirements: []
+orphan_plan_items: []
+
+validation:
+  passed: true
+  errors: []
+  warnings:
+    - "No separate feature specification or constitution was present; requirement IDs are derived from the user request."
+    - "The linked repository README reports 74/150 progress; inspect actual solution coverage before implementation."
+    - "Source repository license terms have not been verified."

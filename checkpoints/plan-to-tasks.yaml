@@ -1,0 +1,147 @@
+metadata:
+  generated: "2026-10-25"
+  source_plan: "plan.md"
+  target_tasks: "plan.md (Task Breakdown section)"
+
+summary:
+  total_plan_items: 10
+  covered_plan_items: 10
+  missing_plan_items: 0
+  coverage_percentage: 100.0
+  total_tasks_generated: 14
+  orphan_tasks: 0
+
+phases:
+  - phase_id: "Phase-1"
+    phase_name: "Setup"
+    items:
+      - item_id: "1.1"
+        description: "Initialize the React JavaScript application"
+        tasks:
+          - task_id: "T001"
+            description: "Scaffold Vite React JavaScript application"
+        notes: ""
+      - item_id: "1.2"
+        description: "Establish the application shell and navigation"
+        tasks:
+          - task_id: "T002"
+            description: "Create the responsive shell and route configuration"
+        notes: ""
+  - phase_id: "Phase-2"
+    phase_name: "Foundational content and data"
+    items:
+      - item_id: "2.1"
+        description: "Build and validate the 150-problem catalog"
+        tasks:
+          - task_id: "T003"
+            description: "Create the 150-problem manifest and check metadata integrity without test cases"
+          - task_id: "T005"
+            description: "Run direct catalog integrity checks without adding test cases"
+        notes: "User explicitly requested no test cases."
+      - item_id: "2.2"
+        description: "Add explanations and original Python and Java reference solutions"
+        tasks:
+          - task_id: "T004"
+            description: "Inventory source coverage/license and populate original Python and Java solution content"
+        notes: ""
+  - phase_id: "Phase-3"
+    phase_name: "User story 1 — Browse and understand the problem set"
+    items:
+      - item_id: "3.1"
+        description: "Search, filter, and sort the collection"
+        tasks:
+          - task_id: "T006"
+            description: "Render the full catalog with search, difficulty filter, and sort controls"
+          - task_id: "T007"
+            description: "Implement title search, difficulty filter, and both sort orders"
+        notes: ""
+      - item_id: "3.2"
+        description: "Read a problem's algorithm and select a solution language"
+        tasks:
+          - task_id: "T008"
+            description: "Implement problem details with Python/Java solution selection"
+        notes: ""
+  - phase_id: "Phase-4"
+    phase_name: "User story 2 — Explore selected algorithms visually"
+    items:
+      - item_id: "4.1"
+        description: "Define deterministic algorithm traces and visualization rendering"
+        tasks:
+          - task_id: "T009"
+            description: "Define deterministic trace records and inputs"
+          - task_id: "T010"
+            description: "Build reusable trace state rendering"
+        notes: ""
+      - item_id: "4.2"
+        description: "Add playback controls and curated visualizations"
+        tasks:
+          - task_id: "T011"
+            description: "Implement trace playback controls"
+          - task_id: "T012"
+            description: "Connect curated visualizations to problem details"
+        notes: ""
+  - phase_id: "Phase-5"
+    phase_name: "Polish and validation"
+    items:
+      - item_id: "5.1"
+        description: "Ensure accessible, responsive playback and catalog UI"
+        tasks:
+          - task_id: "T013"
+            description: "Add accessibility and responsive behavior"
+        notes: ""
+      - item_id: "5.2"
+        description: "Verify acceptance criteria and document content provenance"
+        tasks:
+          - task_id: "T014"
+            description: "Document provenance, run production build, and manually verify interactions"
+        notes: ""
+
+missing_plan_items: []
+orphan_tasks: []
+
+upstream_trace:
+  - plan_item: "2.1"
+    source_requirements: ["REQ-001", "REQ-006"]
+    tasks: ["T003", "T005"]
+    full_trace: "REQ-001,REQ-006 → Phase-2.1 → T003,T005"
+  - plan_item: "2.2"
+    source_requirements: ["REQ-003", "REQ-006", "REQ-007"]
+    tasks: ["T004"]
+    full_trace: "REQ-003,REQ-006,REQ-007 → Phase-2.2 → T004"
+  - plan_item: "3.1"
+    source_requirements: ["REQ-001", "REQ-002", "REQ-005"]
+    tasks: ["T006", "T007"]
+    full_trace: "REQ-001,REQ-002,REQ-005 → Phase-3.1 → T006,T007"
+  - plan_item: "3.2"
+    source_requirements: ["REQ-002", "REQ-003", "REQ-006", "REQ-007"]
+    tasks: ["T008"]
+    full_trace: "REQ-002,REQ-003,REQ-006,REQ-007 → Phase-3.2 → T008"
+  - plan_item: "4.1"
+    source_requirements: ["REQ-004"]
+    tasks: ["T009", "T010"]
+    full_trace: "REQ-004 → Phase-4.1 → T009,T010"
+  - plan_item: "4.2"
+    source_requirements: ["REQ-004", "REQ-005"]
+    tasks: ["T011", "T012"]
+    full_trace: "REQ-004,REQ-005 → Phase-4.2 → T011,T012"
+  - plan_item: "5.1"
+    source_requirements: ["REQ-005"]
+    tasks: ["T013"]
+    full_trace: "REQ-005 → Phase-5.1 → T013"
+  - plan_item: "5.2"
+    source_requirements: ["REQ-001", "REQ-003", "REQ-006", "REQ-007"]
+    tasks: ["T014"]
+    full_trace: "REQ-001,REQ-003,REQ-006,REQ-007 → Phase-5.2 → T014"
+  - plan_item: "1.1"
+    source_requirements: ["REQ-005"]
+    tasks: ["T001"]
+    full_trace: "REQ-005 → Phase-1.1 → T001"
+  - plan_item: "1.2"
+    source_requirements: ["REQ-002", "REQ-005"]
+    tasks: ["T002"]
+    full_trace: "REQ-002,REQ-005 → Phase-1.2 → T002"
+
+validation:
+  passed: true
+  errors: []
+  warnings: []

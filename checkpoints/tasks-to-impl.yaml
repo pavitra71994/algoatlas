@@ -1,0 +1,224 @@
+metadata:
+  generated: "2026-10-25"
+  source_tasks: "plan.md"
+  last_updated: "2026-10-25"
+
+summary:
+  total_tasks: 14
+  completed_tasks: 12
+  in_progress_tasks: 1
+  pending_tasks: 0
+  blocked_tasks: 1
+  completion_percentage: 85.71
+
+tasks:
+  - task_id: "T001"
+    description: "Scaffold the Vite React JavaScript application"
+    status: "completed"
+    implementation:
+      files_changed: ["package.json", "package-lock.json", "vite.config.js", "index.html", ".gitignore", "src/main.jsx"]
+    verification:
+      build_passed: true
+      notes: "Production build passes. Automated test cases and test-only packages were removed at the user's request."
+    upstream_trace:
+      plan_item: "1.1"
+      requirements: ["REQ-005"]
+      full_trace: "REQ-005 → Phase-1.1 → T001"
+  - task_id: "T002"
+    description: "Create responsive shell and navigation"
+    status: "completed"
+    implementation:
+      files_changed: ["src/App.jsx", "src/styles.css"]
+    verification:
+      build_passed: true
+      notes: "Rendered and inspected in the browser."
+    upstream_trace:
+      plan_item: "1.2"
+      requirements: ["REQ-002", "REQ-005"]
+      full_trace: "REQ-002,REQ-005 → Phase-1.2 → T002"
+  - task_id: "T003"
+    description: "Create the complete 150-problem metadata catalog"
+    status: "completed"
+    implementation:
+      files_changed: ["src/data/problemCatalog.js", "src/data/problems.js", "src/App.jsx"]
+    verification:
+      build_passed: true
+      notes: "Direct integrity check confirmed 150 rows, unique IDs/slugs, all source URLs, and difficulty totals Easy 40, Medium 92, Hard 18."
+    upstream_trace:
+      plan_item: "2.1"
+      requirements: ["REQ-001", "REQ-006"]
+      full_trace: "REQ-001,REQ-006 → Phase-2.1 → T003"
+  - task_id: "T004"
+    description: "Author algorithm explanations and Python/Java solutions"
+    status: "in-progress"
+    implementation:
+      files_changed: ["src/data/problems.js"]
+    verification:
+      build_passed: true
+      notes: "9 problem solution pairs and explanations are ready; 141 remain."
+    upstream_trace:
+      plan_item: "2.2"
+      requirements: ["REQ-003", "REQ-006", "REQ-007"]
+      full_trace: "REQ-003,REQ-006,REQ-007 → Phase-2.2 → T004 (partial)"
+  - task_id: "T005"
+    description: "Validate catalog and solution associations"
+    status: "blocked"
+    verification:
+      build_passed: true
+      notes: "Automated test cases were explicitly declined; a direct catalog integrity check was run instead."
+    upstream_trace:
+      plan_item: "2.1,2.2"
+      requirements: ["REQ-001", "REQ-003", "REQ-006", "REQ-007"]
+      full_trace: "REQ-001,REQ-003,REQ-006,REQ-007 → Phase-2 → T005 (deferred)"
+  - task_id: "T006"
+    description: "Render the catalog and filter controls"
+    status: "completed"
+    implementation:
+      files_changed: ["src/components/ProblemList.jsx", "src/App.jsx"]
+    verification:
+      build_passed: true
+      notes: "The UI renders all 150 supplied problem records."
+    upstream_trace:
+      plan_item: "3.1"
+      requirements: ["REQ-001", "REQ-002", "REQ-005"]
+      full_trace: "REQ-001,REQ-002,REQ-005 → Phase-3.1 → T006"
+  - task_id: "T007"
+    description: "Implement title search, filters, sorting, and clear state"
+    status: "completed"
+    implementation:
+      files_changed: ["src/components/ProblemList.jsx", "src/styles.css"]
+    verification:
+      build_passed: true
+      notes: "Search supports problem title and collection ID; difficulty/category filters and both difficulty sort directions are implemented."
+    upstream_trace:
+      plan_item: "3.1"
+      requirements: ["REQ-001", "REQ-002", "REQ-005"]
+      full_trace: "REQ-001,REQ-002,REQ-005 → Phase-3.1 → T007"
+  - task_id: "T008"
+    description: "Show problem explanation and selectable Python/Java solutions"
+    status: "completed"
+    implementation:
+      files_changed: ["src/components/ProblemDetail.jsx", "src/data/problems.js"]
+    verification:
+      build_passed: true
+      notes: "Language selection works for the 9 authored problems; other catalog entries show a clear pending state."
+    upstream_trace:
+      plan_item: "3.2"
+      requirements: ["REQ-002", "REQ-003", "REQ-006", "REQ-007"]
+      full_trace: "REQ-002,REQ-003,REQ-006,REQ-007 → Phase-3.2 → T008"
+  - task_id: "T009"
+    description: "Define deterministic curated traces"
+    status: "completed"
+    implementation:
+      files_changed: ["src/data/problems.js"]
+    verification:
+      build_passed: true
+      notes: "Four problems include trace data."
+    upstream_trace:
+      plan_item: "4.1"
+      requirements: ["REQ-004"]
+      full_trace: "REQ-004 → Phase-4.1 → T009"
+  - task_id: "T010"
+    description: "Render supported trace states"
+    status: "completed"
+    implementation:
+      files_changed: ["src/components/TracePlayer.jsx"]
+    verification:
+      build_passed: true
+      notes: "Manual browser check confirmed array state advances with trace steps."
+    upstream_trace:
+      plan_item: "4.1"
+      requirements: ["REQ-004"]
+      full_trace: "REQ-004 → Phase-4.1 → T010"
+  - task_id: "T011"
+    description: "Implement trace playback controls"
+    status: "completed"
+    implementation:
+      files_changed: ["src/components/TracePlayer.jsx", "src/styles.css"]
+    verification:
+      build_passed: true
+      notes: "Playback, step, reset, speed, and progress controls are available."
+    upstream_trace:
+      plan_item: "4.2"
+      requirements: ["REQ-004", "REQ-005"]
+      full_trace: "REQ-004,REQ-005 → Phase-4.2 → T011"
+  - task_id: "T012"
+    description: "Connect curated visualizations to problem details"
+    status: "completed"
+    implementation:
+      files_changed: ["src/components/ProblemDetail.jsx"]
+    verification:
+      build_passed: true
+      notes: "Visualization tab shows playback when present and pending status otherwise."
+    upstream_trace:
+      plan_item: "4.2"
+      requirements: ["REQ-004", "REQ-005"]
+      full_trace: "REQ-004,REQ-005 → Phase-4.2 → T012"
+  - task_id: "T013"
+    description: "Add responsive and accessible behavior"
+    status: "completed"
+    implementation:
+      files_changed: ["src/styles.css", "src/components/ProblemList.jsx", "src/components/TracePlayer.jsx"]
+    verification:
+      build_passed: true
+      notes: "Responsive breakpoints, reduced motion, keyboard search shortcut, and accessible control labels are present."
+    upstream_trace:
+      plan_item: "5.1"
+      requirements: ["REQ-005"]
+      full_trace: "REQ-005 → Phase-5.1 → T013"
+  - task_id: "T014"
+    description: "Document provenance and verify interactions/build"
+    status: "completed"
+    implementation:
+      files_changed: ["README.md", "plan.md", "checkpoints/plan-to-tasks.yaml", "checkpoints/tasks-to-impl.yaml"]
+    verification:
+      build_passed: true
+      notes: "Manual browser check and production build passed. No automated test cases were added."
+    upstream_trace:
+      plan_item: "5.2"
+      requirements: ["REQ-001", "REQ-002", "REQ-003", "REQ-004", "REQ-005", "REQ-006", "REQ-007"]
+      full_trace: "REQ-001…REQ-007 → Phase-5.2 → T014"
+
+pending_tasks: []
+blocked_tasks:
+  - task_id: "T005"
+    reason: "Automated test cases omitted by explicit user instruction."
+untracked_changes: []
+
+traceability_chain:
+  - chain_id: "TRACE-001"
+    requirement: "REQ-001"
+    plan_phase: "Phase-2 and Phase-3"
+    plan_item: "2.1,3.1"
+    tasks: ["T003", "T006", "T007"]
+    files: ["src/data/problemCatalog.js", "src/data/problems.js", "src/components/ProblemList.jsx"]
+    status: "complete"
+  - chain_id: "TRACE-002"
+    requirement: "REQ-003"
+    plan_phase: "Phase-2 and Phase-3"
+    plan_item: "2.2,3.2"
+    tasks: ["T004", "T008"]
+    files: ["src/data/problems.js", "src/components/ProblemDetail.jsx"]
+    status: "partial"
+  - chain_id: "TRACE-003"
+    requirement: "REQ-004"
+    plan_phase: "Phase-4"
+    plan_item: "4.1,4.2"
+    tasks: ["T009", "T010", "T011", "T012"]
+    files: ["src/data/problems.js", "src/components/TracePlayer.jsx", "src/components/ProblemDetail.jsx"]
+    status: "complete"
+  - chain_id: "TRACE-004"
+    requirement: "REQ-007"
+    plan_phase: "Phase-2 and Phase-3"
+    plan_item: "2.2,3.2"
+    tasks: ["T004", "T008"]
+    files: ["src/data/problems.js", "src/components/ProblemDetail.jsx"]
+    status: "partial"
+
+validation:
+  passed: false
+  errors:
+    - "Bilingual solutions and algorithm explanations remain missing for 141 catalog entries."
+  warnings:
+    - "Automated test cases were explicitly omitted at the user's request."
+  blocking_issues: []
